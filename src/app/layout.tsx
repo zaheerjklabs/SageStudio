@@ -19,11 +19,16 @@ export const metadata: Metadata = {
   title: "SageStudio — Interactive Machine Learning & AI Visualizations",
   description:
     "Visualize. Experiment. Understand. Interactive visualizations for mathematics, machine learning, deep learning, neural networks, and optimization.",
+  icons: {
+    icon: "/logo.svg",
+    apple: "/logo.svg",
+  },
   openGraph: {
     title: "SageStudio — Interactive ML & AI Visualizations",
     description:
       "Don't just read how an algorithm works — see it work. Interactive visualizations for AI, mathematics, and algorithms.",
     type: "website",
+    images: [{ url: "/logo.svg", width: 120, height: 120, alt: "SageStudio" }],
   },
 };
 

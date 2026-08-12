@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/logo.png" alt="SageStudio Logo" width="120" />
+<img src="./public/logo.svg" alt="SageStudio Logo" width="120" />
 
 # SageStudio
 
@@ -28,7 +28,7 @@
 
 <br/>
 
-![SageStudio Banner](./assets/banner.png)
+<img src="./public/banner.svg" alt="SageStudio Banner" width="100%" />
 
 </div>
 
