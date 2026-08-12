@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: #0a0a0b;
+  --color-foreground: #fafafa;
+  --color-card: #111113;
+  --color-card-hover: #18181b;
+  --color-border: #27272a;
+  --color-border-subtle: #1f1f23;
+  --color-muted: #71717a;
+  --color-muted-foreground: #a1a1aa;
+  --color-accent: #6366f1;
+  --color-accent-hover: #818cf8;
+  --color-accent-muted: #6366f120;
+  --color-sage: #10b981;
+  --color-sage-muted: #10b98120;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-success: #22c55e;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  :root {
+    --background: #fafafa;
+    --foreground: #09090b;
+    --card: #ffffff;
+    --card-hover: #f4f4f5;
+    --border: #e4e4e7;
+    --border-subtle: #f4f4f5;
+    --muted: #71717a;
+    --muted-foreground: #52525b;
+    --accent: #4f46e5;
+    --accent-hover: #4338ca;
+    --accent-muted: #4f46e515;
+    --sage: #059669;
+    --sage-muted: #05966915;
+  }
+
+  .dark {
+    --background: #0a0a0b;
+    --foreground: #fafafa;
+    --card: #111113;
+    --card-hover: #18181b;
+    --border: #27272a;
+    --border-subtle: #1f1f23;
+    --muted: #71717a;
+    --muted-foreground: #a1a1aa;
+    --accent: #6366f1;
+    --accent-hover: #818cf8;
+    --accent-muted: #6366f120;
+    --sage: #10b981;
+    --sage-muted: #10b98120;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--accent-muted);
+    color: var(--foreground);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--sage) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(var(--border-subtle) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
