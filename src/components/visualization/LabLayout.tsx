@@ -171,29 +171,32 @@ export function LabLayout({
           </div>
         )}
 
-        {/* Main visualization */}
-        <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] overflow-hidden mb-6">
-          <div className="aspect-[16/10] sm:aspect-[16/9] relative">
-            {visualization}
+        {/* Main Content - Side by Side Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          {/* Left Side - Controls & Metrics */}
+          <div className="space-y-6">
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
+              <h3 className="text-sm font-semibold mb-4 text-[var(--muted-foreground)] uppercase tracking-wider">
+                Controls
+              </h3>
+              <div className="space-y-5">{controls}</div>
+            </div>
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
+              <h3 className="text-sm font-semibold mb-4 text-[var(--muted-foreground)] uppercase tracking-wider">
+                Metrics
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {metrics.map((m) => (
+                  <MetricCard key={m.label} label={m.label} value={m.value} highlight={m.highlight} />
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Controls + Metrics */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-          <div className="lg:col-span-2 rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
-            <h3 className="text-sm font-semibold mb-4 text-[var(--muted-foreground)] uppercase tracking-wider">
-              Controls
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">{controls}</div>
-          </div>
-          <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
-            <h3 className="text-sm font-semibold mb-4 text-[var(--muted-foreground)] uppercase tracking-wider">
-              Metrics
-            </h3>
-            <div className="grid grid-cols-2 gap-3">
-              {metrics.map((m) => (
-                <MetricCard key={m.label} label={m.label} value={m.value} highlight={m.highlight} />
-              ))}
+          {/* Right Side - Visualization */}
+          <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] overflow-hidden sticky top-20" style={{ height: 'fit-content' }}>
+            <div className="aspect-square relative">
+              {visualization}
             </div>
           </div>
         </div>

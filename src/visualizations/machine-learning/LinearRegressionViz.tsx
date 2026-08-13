@@ -166,11 +166,50 @@ export default function LinearRegressionViz() {
       }
       controls={
         <>
-          <Slider label="Dataset Size" value={dataSize} min={10} max={200} step={1} onChange={setDataSize} tooltip="Number of data points" />
-          <Slider label="Noise" value={noise} min={0} max={5} step={0.1} onChange={setNoise} tooltip="Gaussian noise added to data" />
-          <Slider label="Learning Rate" value={learningRate} min={0.001} max={0.1} step={0.001} onChange={setLearningRate} tooltip="Step size for gradient descent" formatValue={(v) => v.toFixed(3)} />
-          <Slider label="Initial Slope" value={initialSlope} min={-3} max={3} step={0.1} onChange={setInitialSlope} />
-          <Slider label="Initial Intercept" value={initialIntercept} min={-3} max={3} step={0.1} onChange={setInitialIntercept} />
+          <Slider 
+            label="Dataset Size" 
+            value={dataSize} 
+            min={10} 
+            max={200} 
+            step={1} 
+            onChange={setDataSize} 
+            tooltip="Number of data points" 
+          />
+          <Slider 
+            label="Noise" 
+            value={noise} 
+            min={0} 
+            max={5} 
+            step={0.1} 
+            onChange={setNoise} 
+            tooltip="Gaussian noise added to data" 
+          />
+          <Slider 
+            label="Learning Rate" 
+            value={learningRate} 
+            min={0.001} 
+            max={0.1} 
+            step={0.001} 
+            onChange={setLearningRate} 
+            tooltip="Step size for gradient descent" 
+            formatValue={(v) => v.toFixed(3)} 
+          />
+          <Slider 
+            label="Initial Slope" 
+            value={initialSlope} 
+            min={-3} 
+            max={3} 
+            step={0.1} 
+            onChange={setInitialSlope} 
+          />
+          <Slider 
+            label="Initial Intercept" 
+            value={initialIntercept} 
+            min={-3} 
+            max={3} 
+            step={0.1} 
+            onChange={setInitialIntercept} 
+          />
         </>
       }
       metrics={[

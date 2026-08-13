@@ -22,6 +22,7 @@ function GithubIcon({ className }: { className?: string }) {
 import { useThemeStore } from "@/store/theme";
 import { cn } from "@/lib/utils";
 import { SearchDialog } from "./SearchDialog";
+import { Logo } from "./Logo";
 
 const navLinks = [
   { href: "/explore", label: "Explore" },
@@ -33,41 +34,6 @@ const navLinks = [
   { href: "/simulations/neural-network-playground", label: "Playground" },
   { href: "/about", label: "About" },
 ];
-
-function Logo() {
-  return (
-    <Link href="/" className="flex items-center gap-2.5 group">
-      <div className="relative w-8 h-8">
-        <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
-          <path
-            d="M6 24 C6 24 8 8 16 8 C24 8 26 24 26 24"
-            stroke="url(#logoGrad)"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            fill="none"
-          />
-          <circle cx="10" cy="16" r="2" fill="var(--accent)" opacity="0.8" />
-          <circle cx="16" cy="12" r="2" fill="var(--sage)" opacity="0.8" />
-          <circle cx="22" cy="16" r="2" fill="var(--accent)" opacity="0.8" />
-          <line x1="10" y1="16" x2="16" y2="12" stroke="var(--accent)" strokeWidth="1" opacity="0.4" />
-          <line x1="16" y1="12" x2="22" y2="16" stroke="var(--sage)" strokeWidth="1" opacity="0.4" />
-          <defs>
-            <linearGradient id="logoGrad" x1="6" y1="8" x2="26" y2="24">
-              <stop stopColor="var(--accent)" />
-              <stop offset="1" stopColor="var(--sage)" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-      <div className="flex flex-col">
-        <span className="text-base font-semibold tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
-          SageStudio
-        </span>
-        <span className="text-[10px] text-[var(--muted)] leading-none">by ZaheerJKLabs</span>
-      </div>
-    </Link>
-  );
-}
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
