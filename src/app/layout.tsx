@@ -16,6 +16,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sagestudio.vercel.app"),
   title: "SageStudio — Interactive Machine Learning & AI Visualizations",
   description:
     "Visualize. Experiment. Understand. Interactive visualizations for mathematics, machine learning, deep learning, neural networks, and optimization.",
